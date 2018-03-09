@@ -68,7 +68,6 @@ public class CharacterMovement : MonoBehaviour
                 playerAnim.SetBool("xMove", false);
             }
         }
-
         // 角色停止的动画控制
         if (movePlayerVertical == 0 && movePlayerHorizontal == 0)
         {
