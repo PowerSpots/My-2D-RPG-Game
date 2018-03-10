@@ -294,6 +294,10 @@ GameObject:
   - component: {fileID: 220018191}
   - component: {fileID: 220018193}
   - component: {fileID: 220018192}
+  - component: {fileID: 220018197}
+  - component: {fileID: 220018196}
+  - component: {fileID: 220018195}
+  - component: {fileID: 220018194}
   m_Layer: 0
   m_Name: Mayor
   m_TagString: Untagged
@@ -445,6 +449,97 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.7, y: 0.1}
   m_EdgeRadius: 0
+--- !u!114 &220018194
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 220018187}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7fe1c9b63bed9f49b05371d0674635c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &220018195
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 220018187}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39ba8e8d50b1982488fa2a052bfeca56, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &220018196
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 220018187}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b79b3f7b0fa6df941976fbfc136a3810, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Conversations:
+  - {fileID: 11400000, guid: 84641c0e5cb8f4842b8878096741c160, type: 2}
+--- !u!114 &220018197
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 220018187}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54931a7a60b90ac4491aed1871653833, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Mayor
+  Age: 0
+  Faction: 
+  Occupation: 
+  Level: 0
+--- !u!1 &257324691
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 257324693}
+  - component: {fileID: 257324692}
+  m_Layer: 0
+  m_Name: Messaging Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &257324692
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 257324691}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c6567dc5fa17684f98ed246aec3bdf4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &257324693
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 257324691}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &272578347
 GameObject:
   m_ObjectHideFlags: 0
@@ -1165,7 +1260,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1224425851}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -16.5, y: -1, z: 0}
+  m_LocalPosition: {x: -12.99, y: -1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1192812084}
