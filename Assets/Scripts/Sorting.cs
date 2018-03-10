@@ -4,9 +4,9 @@ public class Sorting : MonoBehaviour
 {
     public Transform player;
 
-    // Update is called once per frame
     void Update ()
     {
+        // 在主角上方
         if (transform.position.y >= player.transform.position.y)
         {
             Debug.Log("behind player");
@@ -14,7 +14,7 @@ public class Sorting : MonoBehaviour
             GetComponents<BoxCollider2D>()[1].enabled = false;
             GetComponents<BoxCollider2D>()[2].enabled = true;
         }
-
+        // 在主角下方
         if (transform.position.y < player.transform.position.y)
         {
             Debug.Log("in front of player");
