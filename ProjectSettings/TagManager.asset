@@ -5,6 +5,10 @@ TagManager:
   serializedVersion: 2
   tags:
   - Borders
+  - Town
+  - Campsite
+  - Overworld
+  - Construction
   layers:
   - Default
   - TransparentFX

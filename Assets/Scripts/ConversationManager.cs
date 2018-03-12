@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
+
 public class ConversationManager : Singleton<ConversationManager>
 {
     // 继承自单例模式
@@ -19,14 +21,14 @@ public class ConversationManager : Singleton<ConversationManager>
     public Image imageHolder;
 
     // 文本占位符
-    public Text textHolder;
+    public TMP_Text textHolder;
 
     // 查找对话框及其子对象，启动对话协程
     public void StartConversation(Conversation conversation)
     {
         dialogBox = GameObject.Find("Dialog Box").GetComponent<CanvasGroup>();
         imageHolder = GameObject.Find("Speaker Image").GetComponent<Image>();
-        textHolder = GameObject.Find("Dialog Text").GetComponent<Text>();
+        textHolder = GameObject.Find("Dialog Text").GetComponent<TMP_Text>();
 
         if (!talking)
         {

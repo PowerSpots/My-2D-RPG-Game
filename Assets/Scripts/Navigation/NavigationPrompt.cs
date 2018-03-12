@@ -4,10 +4,19 @@ public class NavigationPrompt : MonoBehaviour
 {
     void OnCollisionEnter2D(Collision2D col)
     {
-        // 进入边界触发事件
-        if (col.gameObject.CompareTag("Borders"))
+        if (NavigationManager.CanNavigate(this.tag))
         {
-            Debug.Log("leave town");
+            Debug.Log("attempting to exit via " + tag);
+            NavigationManager.NavigateTo(this.tag);
         }
     }
+
+    void OnTriggerEnter2D(Collider2D col)
+    {
+        if (NavigationManager.CanNavigate(this.tag))
+        {
+            Debug.Log("attempting to exit via " + tag);
+            NavigationManager.NavigateTo(this.tag);
+        }
+    } 
 }

@@ -16,20 +16,20 @@ MonoBehaviour:
     ConversationText: "\u4F60\u8981\u53BB\u54EA\u91CC\uFF1F"
     DisplayPic: {fileID: 21300000, guid: 3cdee2ee92be07548a3fa5d41727f65d, type: 3}
   - SpeakingCharacterName: Player
-    ConversationText: "\u6211\u5728\u60F3\u80FD\u4E0D\u80FD\u53BB\u90A3\u8FB9\u3002"
+    ConversationText: "\u6211\u5728\u60F3\u80FD\u4E0D\u80FD\u53BB\u57CE\u9547\u7684\u53E6\u4E00\u8FB9\u3002"
     DisplayPic: {fileID: 21300000, guid: d3d1406dcad45f549994d540f7dea371, type: 3}
   - SpeakingCharacterName: Mayor
-    ConversationText: "\u4E0D\uFF01\u4F60\u4E0D\u80FD\u53BB\u90A3\u8FB9\uFF01"
+    ConversationText: "\u4E0D\uFF01\u4F60\u4E0D\u80FD\u53BB\u90A3\uFF01"
     DisplayPic: {fileID: 21300000, guid: 3cdee2ee92be07548a3fa5d41727f65d, type: 3}
   - SpeakingCharacterName: Mayor
     ConversationText: "\u57CE\u9547\u7684\u53E6\u4E00\u8FB9\u6B63\u5728\u65BD\u5DE5\u3002"
     DisplayPic: {fileID: 21300000, guid: 3cdee2ee92be07548a3fa5d41727f65d, type: 3}
   - SpeakingCharacterName: Maoyr
-    ConversationText: "\u800C\u4E14\u8FD8\u6709\u5F88\u591A\u602A\u517D"
+    ConversationText: "\u800C\u4E14\u8FD8\u6709\u5F88\u591A\u602A\u517D..."
     DisplayPic: {fileID: 21300000, guid: 3cdee2ee92be07548a3fa5d41727f65d, type: 3}
   - SpeakingCharacterName: Maoyr
-    ConversationText: "\u554A\uFF01\u6211\u521A\u624D\u53EF\u4EC0\u4E48\u90FD\u6CA1\u8BF4..."
+    ConversationText: "\u554A\uFF01\u6211\u521A\u624D\u53EF\u4EC0\u4E48\u90FD\u6CA1\u8BF4\uFF01"
     DisplayPic: {fileID: 21300000, guid: 3cdee2ee92be07548a3fa5d41727f65d, type: 3}
   - SpeakingCharacterName: Maor
-    ConversationText: "\u5FD8\u6389\u6211\u521A\u624D\u6240\u8BF4\u7684\u3002"
+    ConversationText: "\u5FD8\u6389\u6211\u521A\u624D\u6240\u8BF4\u7684..."
     DisplayPic: {fileID: 21300000, guid: 3cdee2ee92be07548a3fa5d41727f65d, type: 3}
