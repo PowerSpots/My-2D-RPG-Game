@@ -17,6 +17,10 @@ public static class NavigationManager
             "Campsite",
             new Route {RouteDescription = "The campsite",CanTravel = false}
         },
+        {
+            "Town",
+            new Route { RouteDescription = "The mian town", CanTravel = true }
+        },
     };
 
    
