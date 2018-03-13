@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class BattleManager : MonoBehaviour
 {
+    // 战斗面板
     public CanvasGroup theButtons;
 
     // 配置战斗场景
@@ -12,8 +13,7 @@ public class BattleManager : MonoBehaviour
     public GameObject[] EnemyPrefabs;
     public AnimationCurve SpawnAnimationCurve;
 
-    // 管理战斗场景的变量
-    private int enemyCount;
+    // 战斗状态
     public enum BattleState
     {
         Begin_Battle,
@@ -25,14 +25,37 @@ public class BattleManager : MonoBehaviour
         Battle_Result,
         Battle_End
     }
-
     private Dictionary<int, BattleState> battleStateHash = new Dictionary<int, BattleState>();
     private BattleState currentBattleState;
+    public Animator battleStateManager;
 
-    private Animator battleStateManager;
-
+    // 战斗入场动画
     public GameObject introPanel;
     private Animator introPanelAnim;
+
+    // 战斗场景的变量
+    private int enemyCount;
+    private bool canSelectEnemy;
+    private string selectedTargetName;
+    private EnemyController selectedTarget;
+    public GameObject selectionCircle;
+    bool attacking = false;
+    public bool CanSelectEnemy
+    {
+        get { return canSelectEnemy; }
+    }
+    public int EnemyCount
+    {
+        get { return enemyCount; }
+    }
+
+    // 粒子系统
+    public GameObject smackParticle;
+    public GameObject wackParticle;
+    public GameObject kickParticle;
+    public GameObject chopParticle;
+    private GameObject attackParticle;
+
 
     void Awake()
     {
@@ -78,8 +101,17 @@ void Update () {
                 introPanelAnim.SetTrigger("Intro");
                 break;
             case BattleState.Player_Move:
+                if (GetComponent<Attack>().attackSelected == true)
+                {
+                    canSelectEnemy = true;
+                }
                 break;
             case BattleState.Player_Attack:
+                canSelectEnemy = false;
+                if (!attacking)
+                {
+                    StartCoroutine(AttackTarget());
+                }
                 break;
             case BattleState.Change_Control:
                 break;
@@ -103,6 +135,17 @@ void Update () {
             newEnemy.transform.position = new Vector3(10, -1, 0);
             yield return StartCoroutine(MoveCharacterToPoint(EnemySpawnPoints[i], newEnemy));
             newEnemy.transform.parent =EnemySpawnPoints[i].transform;
+
+            var controller = newEnemy.GetComponent<EnemyController>();
+            controller.BattleManager = this;
+
+            var EnemyProfile = ScriptableObject.CreateInstance<Enemy>();
+            EnemyProfile.Class = EnemyClass.Dragon;
+            EnemyProfile.level = 1;
+            EnemyProfile.damage = 1;
+            EnemyProfile.health = 20;
+            EnemyProfile.name = EnemyProfile.Class + " " + i.ToString();
+            controller.EnemyProfile = EnemyProfile;
         }
         battleStateManager.SetBool("BattleReady", true);
     }
@@ -146,4 +189,41 @@ void Update () {
         }
     }
 
+    public void SelectEnemy(EnemyController enemy, string name)
+    {
+        selectedTarget = enemy;
+        selectedTargetName = name;
+    }
+
+    //
+    IEnumerator AttackTarget()
+    {
+        attacking = true;
+        var damageAmount = GetComponent<Attack>().hitAmount;
+        switch (damageAmount)
+        {
+            case 5:
+                attackParticle = (GameObject)GameObject.Instantiate(smackParticle);
+                break;
+            case 10:
+                attackParticle = (GameObject)GameObject.Instantiate(wackParticle);
+                break;
+            case 15:
+                attackParticle = (GameObject)GameObject.Instantiate(kickParticle);
+                break;
+            case 20:
+                attackParticle = (GameObject)GameObject.Instantiate(chopParticle);
+                break;
+        }
+        if (attackParticle != null)
+        {
+            attackParticle.transform.position = selectedTarget.transform.position;
+        }
+        selectedTarget.EnemyProfile.health -= damageAmount;
+        yield return new WaitForSeconds(1f);
+        attacking = false;
+        GetComponent<Attack>().hitAmount = 0;
+        battleStateManager.SetBool("PlayerReady", false);
+        Destroy(attackParticle);
+    }
 }
