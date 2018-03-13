@@ -10,6 +10,8 @@ TagManager:
   - Overworld
   - Construction
   - Shop
+  - Sound
+  - Music
   layers:
   - Default
   - TransparentFX

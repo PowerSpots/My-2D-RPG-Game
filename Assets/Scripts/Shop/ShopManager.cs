@@ -2,12 +2,20 @@
 using UnityEngine.UI;
 public class ShopManager : MonoBehaviour
 {
+    GameObject soundEffectsSource;
+    public AudioClip buySound;
+
     public Image PurchaseItemDisplay;
     public ShopSlot[] ItemSlots;
     public InventoryItem[] ShopItems;
     private static ShopSlot SelectedShopSlot;
     private int nextSlotIndex = 0;
     public Text shopKeeperText;
+
+    void Awake()
+    {
+        soundEffectsSource = GameObject.FindGameObjectWithTag("Sound");
+    }
 
     void Start()
     {
@@ -41,6 +49,10 @@ public class ShopManager : MonoBehaviour
 
     public void ConfirmPurchase()
     {
+        if (soundEffectsSource != null)
+        {
+            soundEffectsSource.GetComponent<AudioSource>().PlayOneShot(buySound);
+        }
         PurchaseSelectedItem();
         shopKeeperText.text = "Thanks!";
     }

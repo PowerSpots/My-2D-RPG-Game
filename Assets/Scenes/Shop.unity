@@ -1906,6 +1906,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5976b205062ab64783e6a75a4263ca7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  buySound: {fileID: 8300000, guid: a284472e6c485f24a8499eb5961ce263, type: 3}
   PurchaseItemDisplay: {fileID: 215244855}
   ItemSlots:
   - {fileID: 77748315}
