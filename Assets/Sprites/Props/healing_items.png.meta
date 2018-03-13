@@ -1,18 +1,18 @@
 fileFormatVersion: 2
-guid: 15f88be434bfd1240bfc53e6b52c54a9
-timeCreated: 1520923746
+guid: 37c8fbbf548a0cd40ac511d7ebcd7bab
+timeCreated: 1520923792
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: Shopkeep_0
-    21300002: Shopkeep_1
-    21300004: Shopkeep_2
-    21300006: Shopkeep_3
-    21300008: Shopkeep_4
-    21300010: Shopkeep_5
-    21300012: Shopkeep_6
-    21300014: Shopkeep_7
-    21300016: Shopkeep_8
+    21300000: healing_items_0
+    21300002: healing_items_1
+    21300004: healing_items_2
+    21300006: healing_items_3
+    21300008: healing_items_4
+    21300010: healing_items_5
+    21300012: healing_items_6
+    21300014: healing_items_7
+    21300016: healing_items_8
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -99,13 +99,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Shopkeep_0
+      name: healing_items_0
       rect:
         serializedVersion: 2
-        x: 8
-        y: 307
-        width: 108
-        height: 146
+        x: 28
+        y: 212
+        width: 48
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -113,13 +113,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Shopkeep_1
+      name: healing_items_1
       rect:
         serializedVersion: 2
-        x: 151
-        y: 307
-        width: 117
-        height: 146
+        x: 141
+        y: 212
+        width: 48
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -127,13 +127,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Shopkeep_2
+      name: healing_items_2
       rect:
         serializedVersion: 2
-        x: 306
-        y: 306
-        width: 108
-        height: 146
+        x: 249
+        y: 180
+        width: 58
+        height: 112
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,13 +141,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Shopkeep_3
+      name: healing_items_3
       rect:
         serializedVersion: 2
-        x: 6
-        y: 151
-        width: 97
-        height: 151
+        x: 368
+        y: 214
+        width: 44
+        height: 44
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -155,13 +155,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Shopkeep_4
+      name: healing_items_4
       rect:
         serializedVersion: 2
-        x: 158
-        y: 154
-        width: 97
-        height: 151
+        x: 480
+        y: 214
+        width: 46
+        height: 44
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -169,27 +169,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Shopkeep_5
+      name: healing_items_5
       rect:
         serializedVersion: 2
-        x: 308
-        y: 151
-        width: 97
-        height: 151
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Shopkeep_6
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 0
+        x: 14
+        y: 30
         width: 116
-        height: 146
+        height: 113
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -197,13 +183,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Shopkeep_7
+      name: healing_items_6
       rect:
         serializedVersion: 2
-        x: 152
-        y: 0
-        width: 119
-        height: 146
+        x: 166
+        y: 36
+        width: 99
+        height: 101
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -211,13 +197,27 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Shopkeep_8
+      name: healing_items_7
       rect:
         serializedVersion: 2
-        x: 303
-        y: 0
-        width: 116
-        height: 146
+        x: 297
+        y: 24
+        width: 125
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: healing_items_8
+      rect:
+        serializedVersion: 2
+        x: 473
+        y: 29
+        width: 61
+        height: 116
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}

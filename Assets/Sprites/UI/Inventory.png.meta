@@ -1,18 +1,14 @@
 fileFormatVersion: 2
-guid: 15f88be434bfd1240bfc53e6b52c54a9
-timeCreated: 1520923746
+guid: 0d013160d5cde8c418f4393348b155a7
+timeCreated: 1520923725
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: Shopkeep_0
-    21300002: Shopkeep_1
-    21300004: Shopkeep_2
-    21300006: Shopkeep_3
-    21300008: Shopkeep_4
-    21300010: Shopkeep_5
-    21300012: Shopkeep_6
-    21300014: Shopkeep_7
-    21300016: Shopkeep_8
+    21300000: Inventory_0
+    21300002: Inventory_1
+    21300004: Inventory_2
+    21300006: Inventory_3
+    21300008: Inventory_4
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -99,97 +95,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Shopkeep_0
-      rect:
-        serializedVersion: 2
-        x: 8
-        y: 307
-        width: 108
-        height: 146
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Shopkeep_1
-      rect:
-        serializedVersion: 2
-        x: 151
-        y: 307
-        width: 117
-        height: 146
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Shopkeep_2
-      rect:
-        serializedVersion: 2
-        x: 306
-        y: 306
-        width: 108
-        height: 146
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Shopkeep_3
-      rect:
-        serializedVersion: 2
-        x: 6
-        y: 151
-        width: 97
-        height: 151
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Shopkeep_4
-      rect:
-        serializedVersion: 2
-        x: 158
-        y: 154
-        width: 97
-        height: 151
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Shopkeep_5
-      rect:
-        serializedVersion: 2
-        x: 308
-        y: 151
-        width: 97
-        height: 151
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Shopkeep_6
+      name: Inventory_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
-        width: 116
-        height: 146
+        y: 639
+        width: 337
+        height: 226
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -197,13 +109,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Shopkeep_7
+      name: Inventory_1
       rect:
         serializedVersion: 2
-        x: 152
-        y: 0
-        width: 119
-        height: 146
+        x: 345
+        y: 196
+        width: 671
+        height: 769
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -211,13 +123,41 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Shopkeep_8
+      name: Inventory_2
       rect:
         serializedVersion: 2
-        x: 303
+        x: 93
+        y: 213
+        width: 147
+        height: 111
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Inventory_3
+      rect:
+        serializedVersion: 2
+        x: 27
         y: 0
-        width: 116
-        height: 146
+        width: 310
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Inventory_4
+      rect:
+        serializedVersion: 2
+        x: 426
+        y: 55
+        width: 523
+        height: 89
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}

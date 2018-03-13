@@ -21,6 +21,10 @@ public static class NavigationManager
             "Town",
             new Route { RouteDescription = "The mian town", CanTravel = true }
         },
+        {
+            "Shop",
+            new Route{RouteDescription="The town shop", CanTravel=true}
+        },
     };
 
    
