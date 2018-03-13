@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BattleManager : MonoBehaviour
 {
@@ -31,13 +32,13 @@ public class BattleManager : MonoBehaviour
     private Animator battleStateManager;
 
     public GameObject introPanel;
-    Animator introPanelAnim;
+    private Animator introPanelAnim;
 
     void Awake()
     {
         introPanelAnim = introPanel.GetComponent<Animator>();
 
-        battleStateManager = (Animator)GetComponent(typeof(Animator));
+        battleStateManager = GetComponent<Animator>();
         if (battleStateManager == null)
         {
             Debug.LogError("No battleStateMachine Animator found.");
@@ -51,9 +52,10 @@ public class BattleManager : MonoBehaviour
         StartCoroutine(SpawnEnemies());
 
         GetAnimationStates();
-    }
 
-    void Update () {
+}
+
+void Update () {
         // 根据是否轮到玩家开启和关闭按钮
         if (currentBattleState == BattleState.Player_Move)
             {

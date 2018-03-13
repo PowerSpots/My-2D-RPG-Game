@@ -296,7 +296,7 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 2
+        m_CallState: 1
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &17394604
@@ -508,7 +508,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 5, y: 0}
-  m_SizeDelta: {x: 32, y: 0}
+  m_SizeDelta: {x: 32.1, y: 0}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &123213375
 MonoBehaviour:
@@ -531,10 +531,10 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
+    m_FontSize: 18
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 1
     m_MaxSize: 40
     m_Alignment: 4
     m_AlignByGeometry: 0
@@ -954,7 +954,7 @@ Prefab:
     - target: {fileID: 114180812045337516, guid: 3c30b61251a119c4d81dd4aabe07ac3a,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114180812045337516, guid: 3c30b61251a119c4d81dd4aabe07ac3a,
         type: 2}
@@ -1609,7 +1609,7 @@ RectTransform:
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 70, y: 0}
+  m_SizeDelta: {x: 69.8, y: 0}
   m_Pivot: {x: 1, y: 0.5}
 --- !u!114 &995592904
 MonoBehaviour:
@@ -2246,7 +2246,7 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 2
+        m_CallState: 1
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1243605560
@@ -3050,8 +3050,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -17, y: 0}
-  m_SizeDelta: {x: 180, y: 0}
+  m_AnchoredPosition: {x: -17.15, y: 0}
+  m_SizeDelta: {x: 179.7, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1891604113
 MonoBehaviour:
@@ -3790,7 +3790,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a490410a56fac44a81f5d4006a5d6b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  theButtons: {fileID: 0}
+  theButtons: {fileID: 1085125443}
   EnemySpawnPoints:
   - {fileID: 133561821}
   - {fileID: 226062675}
@@ -3821,7 +3821,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
-  introPanel: {fileID: 1085125439}
+  introPanel: {fileID: 2103829383}
 --- !u!4 &2136804869
 Transform:
   m_ObjectHideFlags: 0
