@@ -27,5 +27,5 @@ public class NavigationPrompt : MonoBehaviour
         }
         GameState.saveLastPosition = false;
         GameState.SetLastScenePosition(SceneManager.GetActiveScene().name, startingPosition);
-    } 
+    }
 }

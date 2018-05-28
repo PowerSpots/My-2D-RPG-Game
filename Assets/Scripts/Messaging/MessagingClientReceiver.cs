@@ -8,11 +8,11 @@ public class MessagingClientReceiver : MonoBehaviour
 
     void ThePlayerIsTryingToLeave()
     {
-        // 获取并检查 对话组件 脚本
+        // 获取并检查对话组件
         var dialog = GetComponent<ConversationComponent>();
         if (dialog != null)
         {
-            // 检查对话组件里是否有对话内容
+            // 检查对话组件里是否存在对话
             if (dialog.Conversations != null && dialog.Conversations.Length > 0)
             {
                 var conversation = dialog.Conversations[0];
