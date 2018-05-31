@@ -23,24 +23,30 @@ public class MuteUnMute : MonoBehaviour
 
     void Awake()
     {
+        // 根据标签查找声音对象并分配给变量
         soundEffectsSource = GameObject.FindGameObjectWithTag("Sound");
+        // 根据标签查找音乐对象
         musicSource = GameObject.FindGameObjectWithTag("Music");
 
         if (musicSource != null)
         {
+            // 查找音源组件
             musicPlaying = musicSource.GetComponent<AudioSource>();
         }
 
         if (soundEffectsSource != null)
         {
+            // 查找音源组件
             soundPlaying = soundEffectsSource.GetComponent<AudioSource>();
         }
 
         musicImage = musicButton.GetComponent<Image>();
         soundImage = soundButton.GetComponent<Image>();
 
+        // 开启、关闭音乐时显示正确的音乐图像
         if (musicPlaying != null)
         {
+            
             if (musicPlaying.mute == false)
             {
                 musicImage.sprite = MusicOn;
@@ -50,7 +56,7 @@ public class MuteUnMute : MonoBehaviour
                 musicImage.sprite = MusicOff;
             }
         }
-
+        // 开启、关闭声音时显示正确的音乐图像
         if (soundPlaying != null)
         {
             if (soundPlaying.mute == false)
@@ -66,6 +72,7 @@ public class MuteUnMute : MonoBehaviour
 
     public void MuteAndUnMuteMusic()
     {
+        // 关闭音乐
         if (musicPlaying.mute == false)
         {
             musicImage.sprite = MusicOff;
@@ -74,6 +81,7 @@ public class MuteUnMute : MonoBehaviour
                 musicPlaying.mute = true;
             }
         }
+        // 开启音乐
         else
         {
             musicImage.sprite = MusicOn;
@@ -84,6 +92,7 @@ public class MuteUnMute : MonoBehaviour
         }
     }
 
+    //关闭开启声音
     public void MuteAndUnMuteSound()
     {
         if (soundPlaying.mute == false)

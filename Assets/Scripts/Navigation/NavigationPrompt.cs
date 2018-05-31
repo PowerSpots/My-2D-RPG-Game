@@ -13,9 +13,10 @@ public class NavigationPrompt : MonoBehaviour
             Debug.Log("attempting to exit via " + tag);
             NavigationManager.NavigateTo(this.tag);
         }
-        // 如果我们不保存最后的位置，加载一个指定的Vector3值，而不是获取玩家的最后位置
+        // 如果我们不保存最后的位置，加载一个在检查器里指定的Vector3值，而不是获取玩家的最后位置
         GameState.saveLastPosition = false;
         GameState.SetLastScenePosition(SceneManager.GetActiveScene().name, startingPosition);
+        ConversationManager.Instance.ResetConversation();
     }
 
     void OnTriggerEnter2D(Collider2D col)
@@ -27,5 +28,6 @@ public class NavigationPrompt : MonoBehaviour
         }
         GameState.saveLastPosition = false;
         GameState.SetLastScenePosition(SceneManager.GetActiveScene().name, startingPosition);
+        ConversationManager.Instance.ResetConversation();
     }
 }

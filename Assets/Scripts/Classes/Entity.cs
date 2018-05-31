@@ -1,45 +1,44 @@
-using UnityEngine;
-/// <summary>
-/// 所有角色的基类
-/// </summary>
+锘縰sing UnityEngine;
+using System.Collections;
+
 public class Entity : ScriptableObject
 {
-    // 姓名
+    // 濮撳悕
     public string name;
-    // 年龄
+    // 骞撮緞
     public int age;
-    // 帮派
+    // 甯淳
     string faction;
-    // 职业
+    // 鑱屼笟
     public string occupation;
-    // 等级
+    // 绛夌骇
     public int level = 1;
-    // 健康
+    // 鍋ュ悍
     public int health = 2;
-    // 力量
+    // 鍔涢噺
     public int strength = 1;
-    // 魔法
+    // 榄旀硶
     public int magic = 0;
-    // 防御
+    // 闃插尽
     public int defense = 0;
-    // 速度
+    // 閫熷害
     public int speed = 1;
-    // 伤害
+    // 浼ゅ
     public int damage = 1;
-    // 护甲
+    // 鎶ょ敳
     public int armor = 0;
-    // 攻击次数
+    // 鏀诲嚮娆℃暟
     public int noOfAttacks = 1;
-    // 武器
+    // 姝﹀櫒
     public string weapon;
-    // 位置
+    // 浣嶇疆
     public Vector2 position;
-    // 承受伤害时调用的方法
+    // 鎵垮彈浼ゅ鏃惰皟鐢ㄧ殑鏂规硶
     public void TakeDamage(int Amount)
     {
         health = health - Mathf.Clamp((Amount - armor), 0, int.MaxValue);
     }
-    // 攻击时调用的方法
+    // 鏀诲嚮鏃惰皟鐢ㄧ殑鏂规硶
     public void Attack(Entity Entity)
     {
         Entity.TakeDamage(strength);

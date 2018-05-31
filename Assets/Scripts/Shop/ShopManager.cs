@@ -33,7 +33,7 @@ public class ShopManager : MonoBehaviour
         }
     }
 
-    // 购买当前选中的商店物品
+    // 选择要购买的物品
     public void SetShopSelectedItem(ShopSlot slot)
     {
         SelectedShopSlot = slot;
@@ -41,12 +41,13 @@ public class ShopManager : MonoBehaviour
         shopKeeperText.text = " ";
     }
 
-    // 购买选中物品
+    // 购买选中的物品
     public static void PurchaseSelectedItem()
     {
         SelectedShopSlot.PurchaseItem();
     }
 
+    // 在选中商品后购买商品
     public void ConfirmPurchase()
     {
         if (soundEffectsSource != null)
@@ -54,7 +55,7 @@ public class ShopManager : MonoBehaviour
             soundEffectsSource.GetComponent<AudioSource>().PlayOneShot(buySound);
         }
         PurchaseSelectedItem();
-        shopKeeperText.text = "Thanks!";
+        shopKeeperText.text = "谢谢!";
     }
 
     public void LeaveTheShop()

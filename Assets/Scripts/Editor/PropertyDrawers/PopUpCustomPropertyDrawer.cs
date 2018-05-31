@@ -4,6 +4,7 @@ using UnityEngine;
 [CustomPropertyDrawer(typeof(PopUpAttribute))]
 public class PopUpCustomPropertyDrawer : PropertyDrawer
 {
+    // 快速访问我们所支持的基础属性类型
     PopUpAttribute popUpAttribute
     {
         get { return ((PopUpAttribute)attribute); }

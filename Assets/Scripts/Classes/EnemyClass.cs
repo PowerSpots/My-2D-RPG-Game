@@ -1,4 +1,7 @@
-﻿public enum EnemyClass
+﻿// 敌人分类
+public enum EnemyClass
 {
-    Dragon, Blob, NastyPeiceOfWork
+    Dragon,
+    Blob,
+    NastyPeiceOfWork
 }

@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class MapPosition : MonoBehaviour {
+public class MapPosition : MonoBehaviour
+{
 
-    // Use this for initialization
     void Awake () {
+        GameState.saveLastPosition = true;
         //寻找玩家在场景中的最后一个位置，如果存在，移动到那
         var lastPosition = GameState.GetLastScenePosition(SceneManager.GetActiveScene().name);
         if (lastPosition != Vector3.zero)
@@ -17,7 +18,7 @@ public class MapPosition : MonoBehaviour {
 
     void OnDestroy()
     {
-        // 关闭场景时保存最后一个位置
+        // 离开场景时检查保存位置的标记，如果允许，保存玩家最后的位置
         if (GameState.saveLastPosition)
         {
             GameState.SetLastScenePosition(SceneManager.GetActiveScene().name, transform.position);

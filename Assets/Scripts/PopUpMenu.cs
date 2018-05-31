@@ -19,7 +19,8 @@ public class PopUpMenu : MonoBehaviour
     }
     public void DisableTheMenu ()
     {
-        popUp.alpha=0;popUp.interactable=false;
+        popUp.alpha=0;
+        popUp.interactable=false;
         popUp.blocksRaycasts=false;
     }
 }

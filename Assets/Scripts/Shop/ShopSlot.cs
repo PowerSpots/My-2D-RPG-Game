@@ -10,6 +10,7 @@ public class ShopSlot : MonoBehaviour
 
     public CanvasGroup buyButton;
 
+    // 将库存项目添加到当前插槽并显示
     public void AddShopItem(InventoryItem item)
     {
         image = transform.GetChild(0).GetComponent<Image>();
@@ -19,11 +20,12 @@ public class ShopSlot : MonoBehaviour
         name.text = item.itemName;
     }
 
+    // 成功购买物品
     public void PurchaseItem()
     {
         GameState.CurrentPlayer.AddinventoryItem(Item);
     }
-
+    // 玩家点击店铺中的商品
     public void ItemSelected()
     {
         if (Item != null)

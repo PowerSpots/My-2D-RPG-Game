@@ -22,6 +22,8 @@ public class ConversationManager : Singleton<ConversationManager>
     // 文本占位符
     public Text textHolder;
 
+    Coroutine DisplayDialog;
+
     // 查找对话框及其子对象，启动对话协程
     public void StartConversation(Conversation conversation)
     {
@@ -31,7 +33,7 @@ public class ConversationManager : Singleton<ConversationManager>
 
         if (!talking)
         {
-            StartCoroutine(DisplayConversation(conversation));
+           DisplayDialog = StartCoroutine("DisplayConversation",conversation);
         }
     }
 
@@ -40,6 +42,11 @@ public class ConversationManager : Singleton<ConversationManager>
     {
         // / 将会话标志设置为false以表明对话开始
         talking = true;
+        if (talking)
+        {
+            dialogBox.alpha = 1;
+            dialogBox.blocksRaycasts = true;
+        }
         foreach (var conversationLine in conversation.ConversationLines)
         {
             // 设置指向当前对话项目的指针
@@ -52,20 +59,17 @@ public class ConversationManager : Singleton<ConversationManager>
         }
         // 将会话标志设置为false以表明对话已经完成
         talking = false;
-    }
-
-    // 根据交谈标志设置对话框的透明度和阻止raycast
-    void OnGUI()
-    {
-        if (talking)
-        {
-            dialogBox.alpha = 1;
-            dialogBox.blocksRaycasts = true;
-        }
-        else
+        if (!talking)
         {
             dialogBox.alpha = 0;
             dialogBox.blocksRaycasts = false;
         }
+    }
+
+    public void ResetConversation()
+    {
+        talking = false;
+        if (DisplayDialog != null)
+            StopCoroutine("DisplayConversation");
     }
 }

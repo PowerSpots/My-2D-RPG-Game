@@ -206,8 +206,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4c7659894d342147bb85ee4c9b1049d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneToLoadName: Town
-  timeToLoad: 3
+  sceneToLoadName: StartScene
+  timeToLoad: 2
 --- !u!1 &1297215621
 GameObject:
   m_ObjectHideFlags: 0
