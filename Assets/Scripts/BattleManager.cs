@@ -39,8 +39,24 @@ public class BattleManager : MonoBehaviour
     // 设置战斗场景的变量
     // 记录场景中活动的敌人数量
     private int enemyCount;
+    public int EnemyCount
+    {
+        get { return enemyCount; }
+        set { enemyCount = value; }
+    }
+
     // 是否可以选中敌人
     private bool canSelectEnemy;
+    public bool CanSelectEnemy
+    {
+        get { return canSelectEnemy; }
+    }
+
+    // 是否可以攻击玩家
+    public bool canAttackPlayer = false;
+    // 发生粒子效果的玩家位置
+    public Transform playerPosition;
+
     // 敌人名称
     private string selectedTargetName;
     private EnemyController selectedTarget;
@@ -48,14 +64,7 @@ public class BattleManager : MonoBehaviour
     public GameObject selectionCircle;
     // 是否可以攻击
     bool attacking = false;
-    public bool CanSelectEnemy
-    {
-        get { return canSelectEnemy; }
-    }
-    public int EnemyCount
-    {
-        get { return enemyCount; }
-    }
+    int enemyDamage;
 
     // 战斗效果粒子系统
     public GameObject smackParticle;
@@ -63,7 +72,6 @@ public class BattleManager : MonoBehaviour
     public GameObject kickParticle;
     public GameObject chopParticle;
     private GameObject attackParticle;
-
 
     void Awake()
     {
@@ -102,6 +110,7 @@ void Update () {
             theButtons.blocksRaycasts = false;
         }
 
+
         // 从状态机中获取当前状态的散列值，在字典中根据散列值获取当前状态，根据当前状态为可能发生的事情设置一个选项
         currentBattleState = battleStateHash[battleStateManager.GetCurrentAnimatorStateInfo(0).shortNameHash];
         switch (currentBattleState)
@@ -117,7 +126,7 @@ void Update () {
                 }
                 break;
             case BattleState.Player_Attack:
-                canSelectEnemy = false;
+                canSelectEnemy = false; 
                 if (!attacking)
                 {
                     StartCoroutine(AttackTarget());
@@ -126,14 +135,45 @@ void Update () {
             case BattleState.Change_Control:
                 break;
             case BattleState.Enemy_Attack:
+                // 只有被攻击的敌人才会对玩家造成伤害
+                if (selectedTarget != null && !canAttackPlayer)
+                {
+                    StartCoroutine(AttackPlayer());
+                }       
                 break;
             case BattleState.Battle_Result:
                 break;
-            case BattleState.Battle_End:
+            case BattleState.Battle_End:                
                 break;
             default:
                 break;
         }
+
+        // 敌人数为0时，简陋版的结束战斗调用
+        if (enemyCount <= 0)
+            RunAway();
+    }
+
+    IEnumerator AttackPlayer()
+    {
+        canAttackPlayer = true;
+        enemyDamage = 11;
+        attackParticle = (GameObject)GameObject.Instantiate(wackParticle);
+        // 将其位置设置为玩家
+        if (attackParticle != null)
+        {
+            attackParticle.transform.position = playerPosition.position;
+        }
+        
+        GameState.CurrentPlayer.health -= enemyDamage;
+        // 等待1秒钟以重置攻击
+        yield return new WaitForSeconds(1f);
+        canAttackPlayer = false;
+        enemyDamage = 0;
+        // 切换到下一个状态
+        Destroy(attackParticle);
+        if (true)
+            battleStateManager.SetBool("BattleReady", true);
     }
 
     // 用循环遍历敌人，并将预制实例化在屏幕外，再在另一个协程中用动画移动到生成点
@@ -161,6 +201,9 @@ void Update () {
             EnemyProfile.name = EnemyProfile.Class + " " + i.ToString();
             // 用新的EnemyProfile类初始化控制器
             controller.EnemyProfile = EnemyProfile;
+
+
+            controller.enemyAI.SetBool("PlayerSeen", true);
         }
         // 通知状态机进入战斗状态
         battleStateManager.SetBool("BattleReady", true);

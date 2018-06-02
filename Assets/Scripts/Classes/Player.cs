@@ -7,6 +7,11 @@ public class Player : Entity
     public string[] Skills;
     public int Money;
 
+    private void Awake()
+    {
+        health = 100;
+    }
+
     public void AddinventoryItem(InventoryItem item)
     {
         Inventory.Add(item);

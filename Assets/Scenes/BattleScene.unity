@@ -3550,6 +3550,11 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1735565963}
+--- !u!4 &1784951130 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4570198526451720, guid: f936c509590b27340a686999b86f1501,
+    type: 2}
+  m_PrefabInternal: {fileID: 1977251055}
 --- !u!1 &1843373854
 GameObject:
   m_ObjectHideFlags: 0
@@ -4095,11 +4100,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4570198526451720, guid: f936c509590b27340a686999b86f1501, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -4.588989
+      value: -4.5
       objectReference: {fileID: 0}
     - target: {fileID: 4570198526451720, guid: f936c509590b27340a686999b86f1501, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -3.7468147
+      value: -3.5
       objectReference: {fileID: 0}
     - target: {fileID: 4570198526451720, guid: f936c509590b27340a686999b86f1501, type: 2}
       propertyPath: m_LocalPosition.z
@@ -4961,6 +4966,8 @@ MonoBehaviour:
     m_RotationOrder: 0
   battleStateManager: {fileID: 2136804870}
   introPanel: {fileID: 2103829383}
+  canAttackPlayer: 0
+  playerPosition: {fileID: 1784951130}
   selectionCircle: {fileID: 1325134814762304, guid: 653caaace058be34f8dae580a94ed839,
     type: 2}
   smackParticle: {fileID: 1156760962878626, guid: 3e228aa162b5f914087e4a78d4a25ba8,

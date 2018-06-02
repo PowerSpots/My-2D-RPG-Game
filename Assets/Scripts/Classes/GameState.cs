@@ -11,6 +11,7 @@ public static class GameState
 
     // 保存当前玩家的数据
     public static Player CurrentPlayer = ScriptableObject.CreateInstance<Player>();
+
     // 记录玩家去过的场景以及他们在该场景中的最后位置的字典
     public static Dictionary<string, Vector3> LastScenePositions = new Dictionary<string, Vector3>();
     // 使用字典类的辅助函数

@@ -6,6 +6,7 @@ public class EnemyController : MonoBehaviour
 {
     // 确定当前的敌人是否被选中
     private bool selected;
+    private bool destroying = false;
     // 选中敌人的光标预制件
     GameObject selection;
 
@@ -14,7 +15,7 @@ public class EnemyController : MonoBehaviour
     // 对敌人资料的引用
     public Enemy EnemyProfile;
     // AI状态机的引用
-    Animator enemyAI;
+    public Animator enemyAI;
     public BattleManager BattleManager
     {
         get { return battleManager; }
@@ -44,6 +45,13 @@ public class EnemyController : MonoBehaviour
             enemyAI.SetInteger("EnemyHealth", EnemyProfile.health);
             enemyAI.SetInteger("PlayerHealth", GameState.CurrentPlayer.health);
             enemyAI.SetInteger("EnemiesInBattle", battleManager.EnemyCount);
+            if (EnemyProfile.health <= 0)
+            {
+                if(!destroying)
+                // 启动移除敌人并减少敌人计数的协程
+                StartCoroutine(DestroyEnemy());
+              
+            }
         }
     }
     // 使用BoxCollider2D和OnMouseDown函数的组合来选择Dragon并显示选择标记
@@ -84,5 +92,13 @@ public class EnemyController : MonoBehaviour
             target.transform.Rotate(0, 0, 180 * Time.deltaTime);
             yield return null;
         }
+    }
+
+    IEnumerator DestroyEnemy()
+    {
+        destroying = true;
+        yield return new WaitForSeconds(3);
+        Destroy(gameObject);
+        BattleManager.EnemyCount -= 1;
     }
 }
