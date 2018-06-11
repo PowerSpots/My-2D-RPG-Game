@@ -15,6 +15,8 @@ public class RandomBattle : MonoBehaviour {
     // 加载的战斗场景名称
     public string battleSceneName;
 
+	private bool battleStay;
+
     // 当玩家进入区域时产生一个随机数（encounterChance）来确定是否会发生战斗
     void OnTriggerEnter2D(Collider2D col)
     {
@@ -38,7 +40,7 @@ public class RandomBattle : MonoBehaviour {
 
     IEnumerator RecalculateChance()
     {
-        while (encounterChance > battleProbability)
+		while (encounterChance > battleProbability)
         {
             yield return new WaitForSeconds(secondsBetweenBattles);
             GameState.saveLastPosition = true;
@@ -50,11 +52,12 @@ public class RandomBattle : MonoBehaviour {
     // 不断检查玩家是否要在特定区域内发生战斗
     void OnTriggerStay2D(Collider2D col)
     {
-        if (encounterChance <= battleProbability)
-        {
-            Debug.Log("Battle");
-            SceneManager.LoadScene(battleSceneName);
-        }
+		if (encounterChance <= battleProbability) 
+		{
+			Debug.Log ("Battle");
+			SceneManager.LoadScene (battleSceneName);
+			battleProbability = 0;
+		}
     }
     //  一旦玩家退出区域，在玩家重新进入区域之前不再尝试加载战斗场景
     void OnTriggerExit2D(Collider2D col)
@@ -62,4 +65,5 @@ public class RandomBattle : MonoBehaviour {
         encounterChance = 100;
         StopCoroutine(RecalculateChance());
     }
+		
 }
